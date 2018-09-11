@@ -8,6 +8,7 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class TareaProvider {
+
   tareas = [];
   constructor() {
     console.log('Hello TareaProvider Provider');
@@ -19,5 +20,7 @@ export class TareaProvider {
     this.tareas.push(tarea);
   }
   editarTarea(){}
-
+  archivarTarea(indice: any){
+    this.tareas.splice(indice,1);
+  }
 }

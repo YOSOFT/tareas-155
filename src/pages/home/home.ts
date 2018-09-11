@@ -36,4 +36,8 @@ export class HomePage {
     });
     alert.present();
   }
+  archivarTarea(indice){
+    console.log(indice);
+    this.servicioTarea.archivarTarea(indice);
+  }
 }

@@ -15,7 +15,7 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item-sliding *ngFor="let tarea of tareas">
+    <ion-item-sliding *ngFor="let tarea of tareas; let indiceTarea = index">
 
         <ion-item-options side="left">
             <button ion-button>
@@ -27,7 +27,9 @@
       <ion-item >{{tarea}}</ion-item>
 
       <ion-item-options side="right">
-        <button ion-button>
+        <button ion-button color="danger"
+        (click)="archivarTarea(indiceTarea)"
+        >
           <ion-icon name="trash">
           </ion-icon>
         </button>
