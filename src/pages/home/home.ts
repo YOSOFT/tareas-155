@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -7,10 +7,22 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
   tareas = [];
-  constructor(public navCtrl: NavController) {
+  constructor
+  (public navCtrl: NavController,
+    private alerta: AlertController
+    ) {
 
   }
   agregarTarea(){
     this.tareas.push("texto");
+    let alert = this.alerta.create({
+      title: "Agregar tarea",
+      inputs: [{type: "text"}],
+      buttons:[
+        {text: "Cancelar"},
+        {text: "Agregar"}
+      ]
+    });
+    alert.present();
   }
 }
