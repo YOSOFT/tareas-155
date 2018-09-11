@@ -17,10 +17,18 @@ export class HomePage {
     this.tareas.push("texto");
     let alert = this.alerta.create({
       title: "Agregar tarea",
-      inputs: [{type: "text"}],
+      inputs: [{
+        type: "text",
+        name: "textoTarea"
+      }],
       buttons:[
         {text: "Cancelar"},
-        {text: "Agregar"}
+        {
+          text: "Agregar",
+          handler: (datos) => { console.log(datos);
+            this.tareas.push(datos.textoTarea);
+          }
+        }
       ]
     });
     alert.present();
