@@ -24,7 +24,9 @@ export class TareaProvider {
   agregarTareas(tarea){
     this.tareas.push(tarea);
   }
-  editarTarea(){}
+  editarTarea(indice, texto){
+    this.tareas[indice] = texto;
+  }
   archivarTarea(indice: any){
     let tarea = this.tareas[indice];
     this.tareasArchivadas.push(tarea);

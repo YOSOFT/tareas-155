@@ -18,7 +18,9 @@
     <ion-item-sliding *ngFor="let tarea of tareas; let indiceTarea = index">
 
         <ion-item-options side="left">
-            <button ion-button>
+            <button ion-button
+            (click)= "editarTarea(indiceTarea)"
+            >
               <ion-icon name="create">
               </ion-icon>
             </button>

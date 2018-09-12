@@ -40,4 +40,23 @@ export class HomePage {
     console.log(indice);
     this.servicioTarea.archivarTarea(indice);
   }
+  editarTarea(indiceTarea){
+    let alert = this.alerta.create({
+      title: "Editar tarea",
+      inputs: [{
+        name: "textoNuevo",
+        value: this.tareas[indiceTarea]
+      }],
+      buttons: [
+        { text: "cancelar"},
+        {
+          text: "listo",
+          handler: (datos) => {
+            this.servicioTarea.editarTarea(indiceTarea, datos.textoNuevo)
+          }
+        },
+      ]
+    });
+    alert.present();
+  }
 }
