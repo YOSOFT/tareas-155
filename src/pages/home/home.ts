@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController, AlertController, reorderArray } from 'ionic-angular';
 import { TareaProvider } from '../../providers/tarea/tarea';
 
 @Component({
@@ -58,5 +58,10 @@ export class HomePage {
       ]
     });
     alert.present();
+  }
+
+  ordenarLista(evento){
+    console.log(evento);
+    reorderArray(this.tareas,evento);
   }
 }
