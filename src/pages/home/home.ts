@@ -8,6 +8,7 @@ import { TareaProvider } from '../../providers/tarea/tarea';
 })
 export class HomePage {
   tareas = [];
+  ordenHabilitado = false;
   constructor
   (public navCtrl: NavController,
     private alerta: AlertController,
@@ -63,5 +64,8 @@ export class HomePage {
   ordenarLista(evento){
     console.log(evento);
     reorderArray(this.tareas,evento);
+  }
+  toggleOrden(){
+    this.ordenHabilitado = !this.ordenHabilitado;
   }
 }

@@ -4,6 +4,13 @@
       Tareas
     </ion-title>
     <ion-buttons end>
+      <button ion-button (click)="toggleOrden()"
+      *ngIf="!ordenHabilitado"
+      >Editar</button>
+
+      <button ion-button (click)="toggleOrden()"
+      *ngIf="ordenHabilitado"
+      >Listo</button>
       <button ion-button
       (click) = "agregarTarea()">
         <ion-icon name="add">
@@ -14,7 +21,7 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list reorder
+  <ion-list [reorder]="ordenHabilitado"
   (ionItemReorder)="ordenarLista($event)"
   >
     <ion-item-sliding *ngFor="let tarea of tareas; let indiceTarea = index">
